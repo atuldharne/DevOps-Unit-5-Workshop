@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4 # Adds a step to checkout the repository code
 
-# C# backend
+# C# backend ---
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
