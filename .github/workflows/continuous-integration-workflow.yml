@@ -19,3 +19,25 @@ jobs:
 
     - name: Run C# tests
       run: dotnet test
+
+# TS frontend
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+          node-version: '24.x'
+
+    - name: Install npm dependencies
+      run: npm install
+      working-directory: DotnetTemplate.Web
+
+    - name: Build TypeScript code
+      run: npm run build
+      working-directory: DotnetTemplate.Web
+
+    - name: Run TypeScript linter
+      run: npm run lint
+      working-directory: DotnetTemplate.Web
+
+    - name: Run TypeScript tests
+      run: npm test
+      working-directory: DotnetTemplate.Web
